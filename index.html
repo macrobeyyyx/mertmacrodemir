@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mert Macro Demir - Spotify Artist</title>
+    <meta name="description" content="BANAN, Türk Rap'in yükselen yıldızı. En son şarkılar, biyografi, iletişim bilgileri ve daha fazlası.">
+    <meta name="keywords" content="BANAN, Türk Rap, Trap, Modern Rap, Underground, Müzik, Spotify">
+    <meta name="author" content="BANAN">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes neonPulse {
+    0%, 100% { box-shadow: 0 0 15px #60A5FA, 0 0 30px #3B82F6, 0 0 45px #2563EB; }
+    50% { box-shadow: 0 0 25px #60A5FA, 0 0 50px #3B82F6, 0 0 75px #2563EB; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(3deg); }
+    75% { transform: translateY(20px) rotate(-3deg); }
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+    100% { transform: rotate(360deg); filter: hue-rotate(360deg); }
+}
+
+.neon-border {
+    animation: neonPulse 2s infinite;
+}
+
+.glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.hover-3d {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+    transform: translateY(-15px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 
+        0 20px 40px rgba(37, 99, 235, 0.3),
+        0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.bg-deep-space {
+    background: linear-gradient(135deg, #020617 0%, #1E3A8A 100%);
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.glow-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-effect::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    animation: rotateGlow 10s linear infinite;
+}
+
+.music-wave {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+}
+
+.wave-bar {
+    width: 3px;
+    background: #3B82F6;
+    animation: waveAnimation 1.2s ease-in-out infinite;
+    border-radius: 1px;
+}
+
+@keyframes waveAnimation {
+    0%, 100% { height: 8px; }
+    50% { height: 25px; }
+}
+
+.wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    animation: orbit 20s linear infinite;
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #3B82F6;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #3B82F6, 0 0 20px #3B82F6;
+}   
+    </style>
+</head>
+<body class="bg-deep-space min-h-screen text-white overflow-x-hidden relative">
+    <!-- Orbiting Particles -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="orbit" style="width: 300px; height: 300px; top: 20%; left: 10%;">
+            <div class="particle" style="top: 0; left: 50%;"></div>
+        </div>
+        <div class="orbit" style="width: 500px; height: 500px; top: 30%; right: 10%;">
+            <div class="particle" style="bottom: 0; right: 50%;"></div>
+        </div>
+        <div class="orbit" style="width: 400px; height: 400px; bottom: 20%; left: 30%;">
+            <div class="particle" style="top: 50%; right: 0;"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16 relative z-10">
+        <!-- Hero Section -->
+        <div class="text-center mb-20">
+            <div class="relative inline-block mb-8">
+                <div class="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-30 floating-element"></div>
+                <img src="img/profile.png" alt="mert" class="relative w-64 h-64 rounded-full object-cover border-4 border-blue-500 neon-border">
+            </div>
+            <h1 class="text-8xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Mert Macro Demir</h1>
+            <p class="text-xl text-blue-300">Her yanlış eylem bir travma, <br> her travma da bir cinayettir.</p>
+        </div>
+
+
+        <!-- About Section -->
+        <div class="glass rounded-3xl p-12 mb-20 hover-3d glow-effect">
+            <h2 class="text-3xl font-bold mb-8 text-blue-300">Hakkında</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-xl hover:bg-blue-600/20 transform transition hover:scale-105">
+                        <h3 class="text-xl font-bold mb-4 text-blue-300">Biyografi</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            2008 İstanbul doğumlu olan Mert Demir, müzik kariyerine 2020 yılında başladı. 
+                            Underground rap sahnesinden yükselerek mainstream başarıya ulaştı.
+                        </p>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:bg-blue-600/20 transform transition hover:scale-105">
+                    <h3 class="text-xl font-bold mb-4 text-blue-300">Tarz</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-blue-600/30 rounded-full neon-border">Trap</span>
+                        <span class="px-4 py-2 bg-blue-600/30 rounded-full neon-border">Modern Rap</span>
+                        <span class="px-4 py-2 bg-blue-600/30 rounded-full neon-border">Underground</span>
+                        <span class="px-4 py-2 bg-blue-600/30 rounded-full neon-border">Pop</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="glass rounded-3xl p-12 hover-3d glow-effect">
+            <h2 class="text-3xl font-bold mb-8 text-blue-300">İletişim</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="glass p-6 rounded-xl hover:bg-blue-600/20 transform transition hover:scale-105">
+                        <h3 class="text-xl font-bold mb-4 text-blue-300">İletişim Bilgileri</h3>
+                        <div class="space-y-4 text-gray-300">
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-envelope text-blue-300"></i> merttdmrrrs@gmail.com
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt text-blue-300"></i> İstanbul, Türkiye
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-xl hover:bg-blue-600/20 transform transition hover:scale-105">
+                        <h3 class="text-xl font-bold mb-4 text-blue-300">Sosyal Medya</h3>
+                        <div class="flex gap-4">
+                            <a href="#" class="p-3 glass rounded-full hover:bg-blue-600/30 neon-border">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                            <a href="#" class="p-3 glass rounded-full hover:bg-blue-600/30 neon-border">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="p-3 glass rounded-full hover:bg-blue-600/30 neon-border">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="p-3 glass rounded-full hover:bg-blue-600/30 neon-border">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="glass p-8 rounded-xl space-y-6 hover:bg-blue-600/10">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-blue-300">Ad Soyad</label>
+                        <input type="text" class="w-full p-3 rounded-lg bg-black/30 border border-blue-500/30 focus:border-blue-500 outline-none neon-border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-blue-300">E-posta</label>
+                        <input type="email" class="w-full p-3 rounded-lg bg-black/30 border border-blue-500/30 focus:border-blue-500 outline-none neon-border">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-blue-300">Mesaj</label> 
+                        <textarea class="w-full p-3 rounded-lg bg-black/30 border border-blue-500/30 focus:border-blue-500 outline-none neon-border" rows="4"></textarea> 
+                    </div> 
+                    <button type="submit" class="w-full p-3 bg-blue-600 rounded-lg text-white font-bold hover:bg-blue-700 transition neon-border">Gönder</button> 
+                </form> 
+            </div> 
+        </div> 
+    </div>
+</body>
+</html>
